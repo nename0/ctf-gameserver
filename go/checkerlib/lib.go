@@ -22,7 +22,7 @@ import (
 )
 
 const (
-	Timeout        = 10 * time.Second
+	Timeout        = 20 * time.Second
 	localStatePath = "_state.json"
 )
 
