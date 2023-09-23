@@ -25,7 +25,7 @@ def round_json(_, tick=-1):
     scoreboard_tick = calculations.get_scoreboard_tick()
 
     if tick > scoreboard_tick or tick < -1:
-        raise PermissionDenied()
+        return JsonResponse({'error': 'invalid tick'}, status=400)
 
     scores, attackers_victims = calculations.scores(tick)
     statuses = scoring_calculations.team_statuses(tick - 3, tick, only_team_fields=['user_id'])
